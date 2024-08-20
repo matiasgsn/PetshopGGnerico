@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --primary-color: #1C274C;
+    --secondary-color: #F93943;
+    --tertiary-color: #EF8354;
+    --light-color: #BFC0C0;
+    --white-color: #FFFFFF;
+
+    --primary-color-filter: invert(13%) sepia(36%) saturate(1356%) hue-rotate(193deg) brightness(94%) contrast(95%);
+    --secondary-color-filter: invert(29%) sepia(73%) saturate(2423%) hue-rotate(337deg) brightness(99%) contrast(98%);
+
+    font-family: georama;
+}
+    
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;    
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: var(--primary-color);
+    padding: 20vh;
+}
+
+header > *{
+   margin: 0;
+}
+
+.titulo{
+    font-size: 6em;
+}
+
+.logo{
+    width: 30em;
+    height: 30em;
+
+    filter: var(--secondary-color-filter)
+}
+
+.subtitulo{
+    font-weight: normal;
+    font-size: 2em;
+
+    text-align: center;
+}
+
+.downarrow{
+    padding: 2em;
+    padding-top: 10em;
+
+    filter: var(--secondary-color-filter)
+}
+
+.downarrow *{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: -8em;
+    width: 10em;
+    height: 10em;
+
+    animation-name: arrowAnim;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrowAnim{
+    0% {
+        transform: translate(0%, 0%);
+    }
+
+    50% {
+        transform: translate(0%, 10%);
+    }
+
+    100%{
+        transform: translate(0%, 0%);     
+    }
+}
+
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+    grid-template-rows: auto auto auto;
+    gap: 8vh;
+    width: 70%;
+    margin-bottom: 10em;
+}
+
+.produto{
+    text-align: center;
+    justify-items: center;
+
+    background-color: var(--white-color);
+
+    border-style: solid;
+    border-color: var(--primary-color);
+    border-width: 0.1em;
+    border-radius: 1em;
+
+
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-row: span 3;
+
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+}
+
+.tituloproduto{
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+.imagemproduto{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    border-radius: 2em;
+    
+}
+
+.precoproduto{
+    font-size: 2em;
+    font-weight: bold;
+
+    color: var(--primary-color);
+    
+}
+
+.produto:hover{
+    .tituloproduto, .precoproduto{
+        color: var(--secondary-color);
+    }
+    
+    border-color: var(--secondary-color);
+    
+    transform: scale(1.1); 
+}
+
