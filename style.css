@@ -14,12 +14,16 @@
 }
     
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;    
 }
 
 header{
@@ -31,7 +35,7 @@ header{
     text-align: center;
 
     color: var(--primary-color);
-    padding: 20vh;
+    padding: 15em;
 }
 
 header > *{
@@ -39,12 +43,12 @@ header > *{
 }
 
 .titulo{
-    font-size: 6em;
+    font-size: 3em;
 }
 
 .logo{
-    width: 30em;
-    height: 30em;
+    max-width: 30em;
+    max-height: 30em;
 
     filter: var(--secondary-color-filter)
 }
@@ -68,8 +72,8 @@ header > *{
     flex-direction: column;
 
     margin-top: -8em;
-    width: 10em;
-    height: 10em;
+    max-width: 10em;
+    max-height: 10em;
 
     animation-name: arrowAnim;
     animation-duration: 2s;
@@ -92,11 +96,17 @@ header > *{
 }
 
 
+.produtos{
+    font-size: 4em;
+}
+
 .cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+    justify-content: center;
+
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
     grid-template-rows: auto auto auto;
-    gap: 8vh;
+    gap: 8em;
     width: 70%;
     margin-bottom: 10em;
 }
@@ -118,12 +128,10 @@ header > *{
     grid-row: span 3;
 
     transition: all .2s ease-in-out;
-    cursor: pointer;
-
 }
 
 .tituloproduto{
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -145,13 +153,28 @@ header > *{
     
 }
 
-.produto:hover{
-    .tituloproduto, .precoproduto{
-        color: var(--secondary-color);
-    }
-    
-    border-color: var(--secondary-color);
-    
-    transform: scale(1.1); 
+.produto:hover{    
+    transform: scale(1.05); 
 }
 
+.btncompra{
+    border: none;
+    border-radius: 2em;
+
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    font-size: 1.5em;
+
+    padding: 0.5em;
+    padding-inline: 2.5em;
+    margin-bottom: 2em;
+
+    cursor: pointer;
+
+    transition: all .2s ease-in-out;
+}
+
+.btncompra:hover{
+    transform: scale(1.1); 
+    
+}
